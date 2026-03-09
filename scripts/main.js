@@ -73,12 +73,35 @@ if(navClose) {
     })
 }
 
-// Remove menu when clicking a link
-const navLink = document.querySelectorAll('.nav-link')
+// Remove menu when clicking a link (but not dropdown toggles)
+const navLink = document.querySelectorAll('.nav-link:not(.dropdown-toggle)')
 
 function linkAction(){
     const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+
+/* ==================== COMPANY DROPDOWN (MOBILE TOGGLE) ==================== */
+const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        // On mobile, toggle the open class
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const parentLi = toggle.closest('.has-dropdown');
+            parentLi.classList.toggle('open');
+        }
+    });
+});
+
+// Close dropdown when clicking outside (desktop)
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.has-dropdown')) {
+        document.querySelectorAll('.has-dropdown.open').forEach(el => {
+            el.classList.remove('open');
+        });
+    }
+});
