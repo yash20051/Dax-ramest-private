@@ -17,11 +17,11 @@ for (const file of files) {
     const footerReplacement = '<li><a href="services.html">Services</a></li>\n                    <li><a href="hire-developers.html">Hire Developers</a></li>';
 
     let changed = false;
-    if (content.includes(navTarget)) {
+    if (content.includes(navTarget) && !content.includes('href="hire-developers.html" class="nav-link"')) {
         content = content.replace(navTarget, navReplacement);
         changed = true;
     }
-    if (content.includes(footerTarget)) {
+    if (content.includes(footerTarget) && !content.includes('href="hire-developers.html">Hire Developers')) {
         content = content.replace(footerTarget, footerReplacement);
         changed = true;
     }

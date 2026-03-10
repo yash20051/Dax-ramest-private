@@ -15,19 +15,19 @@ const getCurrentIcon = () => themeIcon.classList.contains(iconSun) ? iconSun : i
 
 // Validate if the user previously chose a topic
 if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.documentElement.setAttribute('data-theme', selectedTheme === 'dark' ? 'dark' : 'light');
-  themeIcon.classList[selectedTheme === 'dark' ? 'add' : 'remove'](iconSun);
-  themeIcon.classList[selectedTheme === 'dark' ? 'remove' : 'add'](iconMoon);
-  
-  // Fix icon logic: if dark mode, screen shows SUN (to switch to light). If light mode, shows MOON.
-  if (selectedTheme === 'dark') {
-      themeIcon.classList.remove('fa-moon');
-      themeIcon.classList.add('fa-sun');
-  } else {
-      themeIcon.classList.remove('fa-sun');
-      themeIcon.classList.add('fa-moon');
-  }
+    // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+    document.documentElement.setAttribute('data-theme', selectedTheme === 'dark' ? 'dark' : 'light');
+    themeIcon.classList[selectedTheme === 'dark' ? 'add' : 'remove'](iconSun);
+    themeIcon.classList[selectedTheme === 'dark' ? 'remove' : 'add'](iconMoon);
+
+    // Fix icon logic: if dark mode, screen shows SUN (to switch to light). If light mode, shows MOON.
+    if (selectedTheme === 'dark') {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
 } else {
     // Default to dark
     themeIcon.classList.add('fa-sun');
@@ -37,7 +37,7 @@ if (selectedTheme) {
 themeButton.addEventListener('click', () => {
     const current = document.documentElement.getAttribute('data-theme');
     let savedTheme = 'light';
-    
+
     if (current === 'dark') {
         document.documentElement.setAttribute('data-theme', 'light');
         themeIcon.classList.remove('fa-sun');
@@ -58,16 +58,16 @@ themeButton.addEventListener('click', () => {
 
 /* ==================== MOBILE MENU ==================== */
 const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close')
 
-if(navToggle) {
+if (navToggle) {
     navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu')
     })
 }
 
-if(navClose) {
+if (navClose) {
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu')
     })
@@ -76,7 +76,7 @@ if(navClose) {
 // Remove menu when clicking a link (but not dropdown toggles)
 const navLink = document.querySelectorAll('.nav-link:not(.dropdown-toggle)')
 
-function linkAction(){
+function linkAction() {
     const navMenu = document.getElementById('nav-menu')
     navMenu.classList.remove('show-menu')
 }
@@ -97,7 +97,7 @@ dropdownToggles.forEach(toggle => {
     });
 });
 
-// Close dropdown when clicking outside (desktop)
+// Close dropdown when clicking outside (mobile/safari compat)
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.has-dropdown')) {
         document.querySelectorAll('.has-dropdown.open').forEach(el => {
@@ -105,3 +105,30 @@ document.addEventListener('click', (e) => {
         });
     }
 });
+/* ==================== SCROLL HEADER ==================== */
+function scrollHeader() {
+    const header = document.getElementById('header')
+    // When the scroll is greater than 50 viewport height, add the scrolled class
+    if (this.scrollY >= 50) header.classList.add('scrolled');
+    else header.classList.remove('scrolled')
+}
+/* ==================== LOGO MENU TOGGLE ==================== */
+const logo = document.querySelector('.logo');
+const header = document.getElementById('header');
+
+if (logo) {
+    logo.addEventListener('click', (e) => {
+        if (window.innerWidth > 768) {
+            e.preventDefault();
+            header.classList.toggle('menu-open');
+        }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!header.contains(e.target)) {
+            header.classList.remove('menu-open');
+        }
+    });
+}
+window.addEventListener('scroll', scrollHeader)

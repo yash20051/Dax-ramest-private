@@ -19,15 +19,18 @@
         content="Get an exceptional Python developer backed with rich expertise and extensive knowledge of frameworks and libraries.">
     <meta property="og:image" content="assets/og-image.jpg">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
+    <div class="bg-grid"></div>
 
     <header class="header" id="header">
         <div class="container nav-container">
@@ -37,53 +40,63 @@
 
             <nav class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link ">Home</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link ">Services</a></li>
                     <li class="nav-item"><a href="hire-developers.html" class="nav-link active">Hire Developers</a></li>
                     <li class="nav-item has-dropdown">
-                        <a href="company.html" class="nav-link dropdown-toggle">
+                        <a href="company.html" class="nav-link  dropdown-toggle">
                             Company <i class="fa-solid fa-chevron-down nav-link-arrow"></i>
                         </a>
                         <div class="dropdown-panel">
                             <p class="dropdown-header">Overview</p>
                             <div class="dropdown-grid">
                                 <a href="about.html" class="dropdown-item">
-                                    <div class="dropdown-item-title">About Us</div>
-                                    <div class="dropdown-item-sub">Transforming challenges into opportunities with tech.
+                                    <i class="fa-solid fa-building-columns dropdown-item-icon"></i>
+                                    <div class="dropdown-item-content">
+                                        <div class="dropdown-item-title">About Us</div>
+                                        <div class="dropdown-item-sub">Transforming challenges into opportunities with tech.</div>
                                     </div>
                                 </a>
                                 <a href="infrastructure.html" class="dropdown-item">
-                                    <div class="dropdown-item-title">Our Infrastructure</div>
-                                    <div class="dropdown-item-sub">Tech capabilities for scalable and reliable
-                                        solutions.</div>
+                                    <i class="fa-solid fa-server dropdown-item-icon"></i>
+                                    <div class="dropdown-item-content">
+                                        <div class="dropdown-item-title">Our Infrastructure</div>
+                                        <div class="dropdown-item-sub">Tech capabilities for scalable and reliable solutions.</div>
+                                    </div>
                                 </a>
                                 <a href="team.html" class="dropdown-item">
-                                    <div class="dropdown-item-title">Our Team</div>
-                                    <div class="dropdown-item-sub">Dedicated experts transforming ideas into powerful
-                                        digital solutions.</div>
+                                    <i class="fa-solid fa-people-group dropdown-item-icon"></i>
+                                    <div class="dropdown-item-content">
+                                        <div class="dropdown-item-title">Our Team</div>
+                                        <div class="dropdown-item-sub">Dedicated experts transforming ideas into powerful digital solutions.</div>
+                                    </div>
                                 </a>
                                 <a href="methodology.html" class="dropdown-item">
-                                    <div class="dropdown-item-title">Development Methodology</div>
-                                    <div class="dropdown-item-sub">Seamless development with a focus on quality and
-                                        speed.</div>
+                                    <i class="fa-solid fa-diagram-project dropdown-item-icon"></i>
+                                    <div class="dropdown-item-content">
+                                        <div class="dropdown-item-title">Development Methodology</div>
+                                        <div class="dropdown-item-sub">Seamless development with a focus on quality and speed.</div>
+                                    </div>
                                 </a>
                                 <a href="certifications.html" class="dropdown-item">
-                                    <div class="dropdown-item-title">Certifications</div>
-                                    <div class="dropdown-item-sub">Industry-recognized certifications backing our
-                                        quality.</div>
-                                </a>
-                                <a href="alliances.html" class="dropdown-item">
-                                    <div class="dropdown-item-title">Alliances</div>
-                                    <div class="dropdown-item-sub">Building strong alliances for superior tech
-                                        solutions.</div>
+                                    <i class="fa-solid fa-award dropdown-item-icon"></i>
+                                    <div class="dropdown-item-content">
+                                        <div class="dropdown-item-title">Certifications</div>
+                                        <div class="dropdown-item-sub">Industry-recognized certifications backing our quality.</div>
+                                    </div>
                                 </a>
                                 <a href="careers.html" class="dropdown-item">
-                                    <div class="dropdown-item-title">Career Overview</div>
-                                    <div class="dropdown-item-sub">Grow with us and build rewarding careers.</div>
+                                    <i class="fa-solid fa-briefcase dropdown-item-icon"></i>
+                                    <div class="dropdown-item-content">
+                                        <div class="dropdown-item-title">Career Overview</div>
+                                        <div class="dropdown-item-sub">Grow with us and build rewarding careers.</div>
+                                    </div>
                                 </a>
                                 <a href="contact.html" class="dropdown-item">
-                                    <div class="dropdown-item-title">Contact Us</div>
-                                    <div class="dropdown-item-sub">Connect with Ramest to bring your tech ideas to life.
+                                    <i class="fa-solid fa-envelope-open-text dropdown-item-icon"></i>
+                                    <div class="dropdown-item-content">
+                                        <div class="dropdown-item-title">Contact Us</div>
+                                        <div class="dropdown-item-sub">Connect with Ramest to bring your tech ideas to life.</div>
                                     </div>
                                 </a>
                             </div>
@@ -338,7 +351,7 @@
         </section>
     </main>
 
-    <footer class="footer">
+                    <footer class="footer">
         <div class="container footer-container footer-container-4">
             <div class="footer-col">
                 <a href="index.html" class="logo footer-logo">Ramest <span class="highlight">Technolabs</span></a>
@@ -374,19 +387,20 @@
             <div class="footer-col">
                 <h3 class="footer-title">Contact</h3>
                 <ul class="footer-links footer-contact">
-                    <li><i class="fa-solid fa-envelope"></i> hello@ramesttechnolabs.com</li>
-                    <li><i class="fa-solid fa-phone"></i> +91 98765 43210</li>
-                    <li><i class="fa-solid fa-location-dot"></i> Surat, Gujarat, India</li>
+                    <li><i class="fa-solid fa-envelope"></i> hr@ramesttechnolabs.com</li>
+                    <li><i class="fa-solid fa-phone"></i> +91 9510903725</li>
+                    <li><i class="fa-solid fa-location-dot"></i> satellite road ahmedabad, Gujarat, India</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Ramest Technolabs. All rights reserved. &nbsp;|&nbsp; Built with <i class="fa-solid fa-heart"
+            <p>&copy; 2026 Ramest Technolabs. All rights reserved. &nbsp;|&nbsp; Built with <i class="fa-solid fa-heart"
                     style="color:var(--first-color);"></i> in India</p>
         </div>
     </footer>
 
     <script src="scripts/main.js"></script>
+    <script src="scripts/animations.js"></script>
 </body>
 
 </html>
